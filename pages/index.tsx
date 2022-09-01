@@ -65,7 +65,7 @@ export default function Home() {
                   <li className="text-red-600">•</li>
                   <li>NextJS</li>
                 </ul>
-                <OutlineButton label={"Let's Talk"} />
+                <OutlineButton label={"Let's Talk"} href="#contact" />
               </div>
               <div className="col-span-12 md:col-span-6 px-6">
                 <Image

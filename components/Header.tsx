@@ -8,17 +8,23 @@ const NavigationLink = ({ label }: { label: string }) => {
 
 const HamburgerButton = () => {
   return (
-    <button className="md:invisible bg-gray-900 h-full py-3 border border-gray-900">
+    <button className="invisible bg-gray-900 h-full py-3 border border-gray-900">
       Hello World
     </button>
   );
 };
 
-export const OutlineButton = ({ label }: { label: string }) => {
+export const OutlineButton = ({
+  label,
+  href,
+}: {
+  label: string;
+  href?: string;
+}) => {
   return (
     <a
-      className="px-6 py-3 border border-gray-900 transition-colors duration-200 hover:bg-gray-900 hover:text-white font-medium text-gray-900"
-      href="#"
+      className="px-6 py-3 border w-full md:w-auto flex items-center justify-center border-gray-900 transition-colors duration-200 hover:bg-gray-900 hover:text-white font-medium text-gray-900"
+      href={href}
     >
       {label}
     </a>
@@ -32,7 +38,7 @@ export default function Header() {
         <div className="col-span-6 md:col-span-4 font-bold text-lg">
           george.kemp
         </div>
-        <ul className="col-span-4 font-medium gap-6 w-full justify-center hidden md:flex">
+        <ul className="col-span-4 font-medium gap-6 w-full justify-center invisible hidden md:flex">
           <li>
             <NavigationLink label="Articles" />
           </li>
@@ -45,7 +51,7 @@ export default function Header() {
         </ul>
         <div className="col-span-6 md:col-span-4 flex gap-4 justify-end items-center">
           <HamburgerButton />
-          <OutlineButton label="Let's Talk" />
+          <OutlineButton href="#contact" label="Let's Talk" />
         </div>
       </div>
     </header>
