@@ -28,7 +28,7 @@ export default function Home() {
                 </ul>
                 <OutlineButton label={"Let's Talk"} />
               </div>
-              <div className="col-span-12 md:col-span-6">
+              <div className="col-span-12 md:col-span-6 px-6">
                 <Image
                   src="/avatar.png"
                   layout="responsive"
