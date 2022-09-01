@@ -2,8 +2,47 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import { OutlineButton } from "../components/Header";
+import { Form } from "../components/Form";
+import { useCallback, useState } from "react";
+
+const useContactForm = () => {
+  const [complete, setComplete] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const submit = useCallback((data: any) => {
+    setLoading(true);
+    setError("");
+    fetch("/api/sendgrid", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setComplete(true);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  return {
+    complete,
+    error,
+    loading,
+    submit,
+  };
+};
 
 export default function Home() {
+  const { submit, loading, error, complete } = useContactForm();
   return (
     <Layout>
       <Head>
@@ -52,8 +91,14 @@ export default function Home() {
               </div>
             </div>
             {/* End Section Header */}
-            <div className="text-center text-red-600 text-lg text-semibold">
-              Form Coming Soon...
+            <div className="max-w-xl mx-auto py-6">
+              {complete ? (
+                <p className="text-center text-semibold">
+                  Thanks for reaching out, I'll reply as soon as possible
+                </p>
+              ) : (
+                <Form onSubmit={submit} error={error} loading={loading} />
+              )}
             </div>
           </div>
         </section>

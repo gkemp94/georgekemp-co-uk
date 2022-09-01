@@ -6,6 +6,7 @@ module.exports = {
       sans: ["Bai Jamjuree", "sans-serif"],
     },
     colors: {
+      transparent: "#00000000",
       white: "#E5E5E5",
       gray: {
         900: "#161513",
