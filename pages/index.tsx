@@ -32,8 +32,8 @@ export default function Home() {
                 <Image
                   src="/avatar.png"
                   layout="responsive"
-                  width={500}
-                  height={500}
+                  width={1328}
+                  height={1482}
                 />
               </div>
             </div>
