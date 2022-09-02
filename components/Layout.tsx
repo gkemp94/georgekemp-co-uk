@@ -12,10 +12,17 @@ export default function Layout({ children, title, description }: LayoutProps) {
   return (
     <div>
       <Head>
-        <title>{title ? `${title} | George Kemp` : "George Kemp"}</title>
+        <title>
+          {title
+            ? `${title} | George Kemp`
+            : "George Kemp | HubSpot CMS & NextJS Freelancer"}
+        </title>
         <meta
           name="description"
-          content={description || "Personal Portfolio of George Kemp"}
+          content={
+            description ||
+            "Unlock the full potential of your web presence. With high quality HubSpot CMS, NextJS and cloud development"
+          }
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
