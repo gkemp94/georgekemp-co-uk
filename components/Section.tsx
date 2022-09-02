@@ -4,6 +4,7 @@ import { StarIcon } from "./StarIcon";
 type SectionProps = HTMLAttributes<HTMLElement> & {
   hideIcon?: boolean;
   header?: string;
+  noPadding?: boolean;
   description?: string;
 };
 
@@ -12,11 +13,12 @@ export function Section({
   hideIcon,
   title,
   description,
+  noPadding,
   className,
   ...props
 }: SectionProps) {
   return (
-    <section className={`py-24 ${className}`} {...props}>
+    <section className={`${noPadding ? "" : "py-24"} ${className}`} {...props}>
       <div className="container mx-auto max-w-5xl p-6">
         <div className="flex flex-col items-center">
           {!hideIcon && <StarIcon className="text-red-600 mb-6" />}

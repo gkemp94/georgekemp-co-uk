@@ -45,7 +45,7 @@ export default function Home() {
   const { submit, loading, error, complete } = useContactForm();
   return (
     <Layout>
-      <Section id="hero" hideIcon className="py-0">
+      <Section id="hero" hideIcon noPadding>
         <div className="grid grid-cols-12 gap-y-12 md:gap-y-0 md:gap-x-12 items-center">
           <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-6">
             <h2 className="text-5xl font-bold uppercase pt-6">
