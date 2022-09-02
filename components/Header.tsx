@@ -31,7 +31,7 @@ export const OutlineButton = ({
   );
 };
 
-export default function Header() {
+export function Header() {
   return (
     <header>
       <div className="max-w-5xl mx-auto px-6 py-8 container grid  items-center grid-cols-12">

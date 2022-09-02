@@ -1,5 +1,4 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import { Footer, Header } from ".";
 import Head from "next/head";
 
 interface LayoutProps {
@@ -8,7 +7,7 @@ interface LayoutProps {
   description?: string;
 }
 
-export default function Layout({ children, title, description }: LayoutProps) {
+export function Layout({ children, title, description }: LayoutProps) {
   return (
     <div>
       <Head>

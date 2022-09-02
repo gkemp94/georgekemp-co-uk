@@ -1,9 +1,6 @@
 import Image from "next/image";
-import Layout from "../components/Layout";
-import { OutlineButton } from "../components/Header";
-import { Form } from "../components/Form";
 import { useCallback, useState } from "react";
-import { Section } from "../components/Section";
+import { Layout, OutlineButton, Form, Section } from "../components";
 
 const useContactForm = () => {
   const [complete, setComplete] = useState(false);
