@@ -40,7 +40,7 @@ export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     return (
       <BaseInput label={label} name={name} required={true}>
         <input
-          className="px-4 py-3 border-2 w-full border-gray-900"
+          className="px-4 py-3 border-2 bg-transparent w-full border-gray-900"
           ref={ref}
           name={name}
           required={required}
@@ -59,7 +59,7 @@ export const TextAreaInput = React.forwardRef<
   return (
     <BaseInput label={label} name={name} required={required}>
       <textarea
-        className="px-4 py-3 border-2 w-full border-gray-900"
+        className="px-4 py-3 border-2 w-full bg-transparent border-gray-900"
         required={required}
         name={name}
         ref={ref}

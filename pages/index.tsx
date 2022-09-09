@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useCallback, useState } from "react";
 import { Layout, OutlineButton, Form, Section } from "../components";
+import { Cards } from "../components/Cards";
+import LogoGrid from "../components/LogoGrid";
 
 const useContactForm = () => {
   const [complete, setComplete] = useState(false);
@@ -69,6 +71,36 @@ export default function Home() {
       </Section>
       <Section
         className="bg-[#fff]"
+        title="How can I help you?"
+        description="We are here to help your business grow. Got a question? Reach out."
+      >
+        <Cards
+        
+          cards={[
+            {
+              title: "HubSpot CMS",
+              description:
+                "Leverage the full potential of your HubSpot portal with a performant, flexible and easy to use website.",
+            },
+            {
+              title: "Custom Web Development",
+              description:
+                "Looking to upgrade your online presence? Improve performance, optimize for SEO & increase your productivity with a new and/or improved website.",
+            },
+            {
+              title: "Application Development",
+              description:
+                "Automate your business process, integrate with existing software or develop a client facing application. We can help you grow your business through streamline efficient software.",
+            },
+            {
+              title: "SEO",
+              description:
+                "I partner with industry leading SEO experts who can leverage the same strategies used by multi-national companies to drive more traffic and increase conversions.",
+            },
+          ]}
+        />
+      </Section>
+      <Section
         id="contact"
         hideIcon
         title="Get in touch"
@@ -84,7 +116,6 @@ export default function Home() {
           )}
         </div>
       </Section>
-      {/* <Section title="Previous Clients">Hello World!</Section> */}
     </Layout>
   );
 }
